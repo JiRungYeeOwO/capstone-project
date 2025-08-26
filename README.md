@@ -46,8 +46,8 @@ AWS EC2(+RDS)에 배포하여 시연을 진행했습니다. (현재는 서비스
 ---
 
 ## 🎥 데모/자료
-- 시연 영상: (링크 추가 예정)
-- 발표 자료: (링크 추가 예정)
+- 시연 영상: https://drive.google.com/file/d/1OXZ_Teou8qHVY1tUkBvkaoKhMCSlWcxp/view
+- 발표 자료: https://docs.google.com/presentation/d/18P3d-gHDXrwtnUL9VKc_DV0uaTI6vgBd/
 
 ---
 
