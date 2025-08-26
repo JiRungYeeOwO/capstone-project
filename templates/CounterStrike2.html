@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카스2</title>
+    <link rel="stylesheet" href="../static/css/sub_page_1.css">
+    <link rel="stylesheet" href="../static/css/top_menu.css">
+    <style>
+        *
+        {
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        html,body
+        {
+            width: 100%;
+            height: 100%;
+            background-color: #2B2B2B;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="top_menu">
+                <div class="left_menu">
+                    <a class="menu_category" href="/"><img src="../static/img/banner/Sprite_Logo.png" alt="Logo"></a>
+                </div>
+                <div class="center_menu">
+                    <a class="menu_category" href="/LOL">리그오브레전드</a>
+                    <a class="menu_category" href="/PUBG">배틀그라운드</a>
+                    <a class="menu_category" href="/Overwatch">오버워치</a>
+                    <a class="menu_category" href="/valo">발로란트</a>
+                </div>
+                <div class="right_menu">
+                    {% if session.user_id %}
+                    <a class="menu_category" href="/mypage">My Page</a>
+                    <a class="menu_category" href="/logout">Log Out</a>
+                    {% else %}
+                    <a class="menu_category" href="/login">Login</a>
+                    <a class="menu_category" href="/signup">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <article class="person_list">
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('HeatoN', 2)"><img src="../static/img/person/HeatoN.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('HeatoN', 2)">HeatoN </a>
+                    <br>소속팀 : 없음 (전 프로 출신) </br>
+                    <br>스웨덴 출신의 전설적인 카스2 선수로, Ninjas in Pyjamas 팀의 일원이었습니다.</br>
+                    또한, 여러 주요 대회에서 뛰어난 성과를 거두었으며, 특히 반사 신경과 정확한 조준 능력으로 유명합니다.             
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('f0rest', 2)"><img src="../static/img/person/f0rest.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('f0rest', 2)"> f0rest </a>
+                    <br>소속팀 : Dignitas (현 프로게이머) </br>
+                    <br>Patrik "f0rest" Lindberg는 스웨덴 출신의 유명한 e스포츠 선수로, Counter-Strike 1.6과 CS에서 뛰어난 실력을 자랑합니다. </br>
+                    그는 Fnatic과 Ninjas in Pyjamas (NiP) 팀에서 활동하며 여러 주요 대회에서 우승했습니다.
+                    <br>f0rest는 꾸준한 성과와 뛰어난 기술로 유명합니다.</br>
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('GeT_RiGhT', 3)"><img src="../static/img/person/GeT_RiGhT.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('GeT_RiGhT', 3)"> GeT_RiGhT </a>
+                    <br>소속팀 : Dignitas (현 프로게이머) </br>
+                    <br>Christopher "GeT_RiGhT" Alesund은 스웨덴 출신의 전설적인 Counter-Strike: Global Offensive (CS) 선수입니다.</br>
+                    그는 Ninjas in Pyjamas (NiP) 팀의 창립 멤버로, NiP의 황금 시대를 이끌었으며 많은 우승을 차지했습니다.
+                    <br>GeT_RiGhT는 뛰어난 전략과 플레이 스타일로 유명하며, CS역사상 가장 현저한 선수 중 한 명으로 꼽힙니다.</br>
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('NEO', 2)"><img src="../static/img/person/NEO.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('NEO', 2)"> NEO </a>
+                    <br>소속팀 : 없음 (전 프로 출신) </br>
+                    <br>Filip "NEO" Kubski는 전설적인 폴란드 출신의 Counter-Strike 선수로, 특히 1.6 시대에 뛰어난 실력으로 유명합니다.</br>
+                    Virtus.pro와 함께 다수의 국제 대회에서 우승을 차지하며 폴란드의 커뮤니티에 큰 영향을 미쳤습니다.
+                    <br>현재는 주로 컨설턴트와 스트리머로 활동 중입니다. </br>
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('markeloff', 3)"><img src="../static/img/person/markeloff.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('markeloff', 3)"> markeloff </a>
+                    <br>소속팀 : HellRaisers (현 프로게이머) </br>
+                    <br>현재 Yegor "markeloff" Markelov은 HellRaisers라는 팀에서 활동하고 있습니다.</br>
+                    HellRaisers는 유럽을 기반으로 활동하는 프로 팀으로, 다양한 대회와 리그에서 경기에 참여하고 있습니다.
+                    <br>Markeloff는 팀의 일원으로서 CS경기에서 중요한 역할을 하고 있습니다.</br>
+                </p>
+            </div>
+            <!-- 추가적인 인물들은 이어서 나열하시면 됩니다 -->
+        </article>
+    </section>  
+    <script>
+        // 이미지를 클릭할 때 호출되는 함수
+        function handleImageClick(name, table_index) {
+            // 클릭된 경우, /update_data_select 엔드포인트에 table_index 값을 전송
+            fetch('/update_data_select', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ value: table_index }) // 여기에 적절한 table_index 값을 넣어주세요
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // 서버로부터의 응답 확인
+                // 이 부분에 원하는 추가 처리를 할 수 있습니다.
+            })
+            .catch(error => console.error('Error:', error));
+    
+            // 클릭된 이미지의 이름을 URL 파라미터로 추가하여 index.html로 이동
+            window.location.href = '/index?name=' + name + '&table_index=' + table_index;
+        }
+    </script>
+</body>
+</html>

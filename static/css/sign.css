@@ -1,0 +1,44 @@
+
+        h1 
+        {
+            text-align: center;
+            color:black;
+        }
+
+        form 
+        {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label 
+        {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .input_area
+        {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .sub_btn
+        {
+            background-color: #2B2B2B;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: ease-in-out 0.2s;
+        }
+
+        .sub_btn:hover
+        {
+            background-color: #ccc;
+            color:#000;
+        }

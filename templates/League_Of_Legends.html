@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends</title>
+    <link rel="stylesheet" href="../static/css/sub_page_1.css">
+    <link rel="stylesheet" href="../static/css/top_menu.css">
+    <style>
+        *
+        {
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        html,body
+        {
+            width: 100%;
+            height: 100%;
+            background-color: #2B2B2B;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="top_menu">
+                <div class="left_menu">
+                    <a class="menu_category" href="/"><img src="../static/img/banner/Sprite_Logo.png" alt="Logo"></a>
+                </div>
+                <div class="center_menu">
+                    <a class="menu_category" href="/LOL">리그오브레전드</a>
+                    <a class="menu_category" href="/PUBG">배틀그라운드</a>
+                    <a class="menu_category" href="/Overwatch">오버워치</a>
+                    <a class="menu_category" href="/valo">발로란트</a>
+                </div>
+                <div class="right_menu">
+                    {% if session.user_id %}
+                    <a class="menu_category" href="/mypage">My Page</a>
+                    <a class="menu_category" href="/logout">Log Out</a>
+                    {% else %}
+                    <a class="menu_category" href="/login">Login</a>
+                    <a class="menu_category" href="/signup">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <article class="person_list">
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Faker', 3)"><img src="../static/img/person/Faker.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Faker', 3)">Faker (이상혁)</a>
+                    <br>소속팀 : T1 (현 프로게이머)</br>
+                    <br>페이커는 리그 오브 레전드에서 쓰는 많은 챔피언 중에서도 특히 압도적인 실력으로 유명합니다. </br>
+                    그의 킬에는 항상 정확한 위치 선택, 순발력 있는 조작, 그리고 예측 불가능한 전략이 함께 어우러져 있습니다.
+                    <br>특히 중단 라인에서의 그의 킬은 상대팀을 위협하고 게임을 주도하는 데 결정적인 역할을 합니다.</br>               
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('ShowMaker', 3)"><img src="../static/img/person/ShowMaker.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('ShowMaker', 3)">ShowMaker (허수)</a>
+                    <br>소속팀 : Dplus KIA (현 프로게이머)</br>
+                    <br>코리아의 전설적인 프로게이머, 리그 오브 레전드에서 뛰어난 실력을 자랑합니다. </br>
+                    그는 DWG KIA 팀에서 미드 라인 포지션을 담당하며, 뛰어난 메카닉 스킬과 전략적인 플레이로 유명합니다.
+                    <br>쇼메이커의 플레이는 종종 예측하기 어렵고 역동적이며, 그의 뛰어난 킬 센스는 상대팀을 위협하고 게임의 틀을 바꿀 수 있습니다.</br>                  
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Ruler', 2)"><img src="../static/img/person/Ruler.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Ruler', 2)">Ruler (박재혁)</a>
+                    <br>소속팀 : JD Gaming (현 프로게이머)</br>
+                    <br>Ruler는 한국의 프로게이머로, 본명은 박재혁입니다. </br>
+                    그는 리그 오브 레전드의 AD 캐리 포지션에서 뛰어난 실력을 보여주며, JD Gaming 팀에서 활약하고 있습니다. 
+                    <br>Ruler의 특징은 뛰어난 CS(크리프 스코어) 능력과 팀과의 협업을 통해 게임의 흐름을 이끌어내는 능력입니다. </br>
+                    그의 안정적인 플레이는 상대팀을 압도하고 경기의 승패를 좌우할 수 있습니다.
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Chovy', 2)"><img src="../static/img/person/Chovy.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Chovy', 2)">Chovy (정지훈)</a>
+                    <br>소속팀 : Gen.G (현 프로게이머)</br>
+                    <br>쵸비는 한국의 프로게이머로, 본명은 정지훈입니다. </br>
+                    그는 리그 오브 레전드의 미드 라이너로 활약하며, 그의 뛰어난 기술과 전략적인 플레이로 유명합니다. 
+                    <br>이를 통해 DRX와 Hanwha Life Esports 팀에서 주목을 받았습니다.  </br>
+                    초비는 뛰어난 메카닉스와 예측할 수 없는플레이로 상대팀을 괴롭히며, 그의 킬 센스는 게임의 흐름을 바꿀 수 있습니다.
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Oner', 2)"><img src="../static/img/person/Oner.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Oner', 2)">Oner (문현준)</a>
+                    <br>소속팀 : T1 (현 프로게이머) </br>
+                    <br>T1 Oner, 본명 문현준, 한국의 League of Legends 프로게이머로, T1에서 활약했습니다. </br>
+                    주로 정글 포지션에서 플레이하며, 그의 플레이 스타일은 전략적이고 다양한 챔피언을 다루는 것으로 알려져 있습니다. 
+                    <br>롤드컵과 같은 대회에서 좋은 성적을 내며 국제적으로도 인정받았으며, 그의 플레이는 많은 팬들에게 사랑을 받았습니다.</br>
+                </p>
+            </div>
+            <!-- 추가적인 인물들은 이어서 나열하시면 됩니다 -->
+        </article>
+    </section>  
+    <script>
+        // 이미지를 클릭할 때 호출되는 함수
+        function handleImageClick(name, table_index) {
+            // 클릭된 경우, /update_data_select 엔드포인트에 table_index 값을 전송
+            fetch('/update_data_select', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ value: table_index }) // 여기에 적절한 table_index 값을 넣어주세요
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // 서버로부터의 응답 확인
+                // 이 부분에 원하는 추가 처리를 할 수 있습니다.
+            })
+            .catch(error => console.error('Error:', error));
+    
+            // 클릭된 이미지의 이름을 URL 파라미터로 추가하여 index.html로 이동
+            window.location.href = '/index?name=' + name + '&table_index=' + table_index;
+        }
+    </script>
+</body>
+</html>

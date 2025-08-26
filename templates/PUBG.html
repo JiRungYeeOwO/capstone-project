@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG</title>
+    <link rel="stylesheet" href="../static/css/sub_page_1.css">
+    <link rel="stylesheet" href="../static/css/top_menu.css">
+    <style>
+        *
+        {
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        html,body
+        {
+            width: 100%;
+            height: 100%;
+            background-color: #2B2B2B;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="top_menu">
+                <div class="left_menu">
+                    <a class="menu_category" href="/"><img src="../static/img/banner/Sprite_Logo.png" alt="Logo"></a>
+                </div>
+                <div class="center_menu">
+                    <a class="menu_category" href="/LOL">리그오브레전드</a>
+                    <a class="menu_category" href="/PUBG">배틀그라운드</a>
+                    <a class="menu_category" href="/Overwatch">오버워치</a>
+                    <a class="menu_category" href="/valo">발로란트</a>
+                </div>
+                <div class="right_menu">
+                    {% if session.user_id %}
+                    <a class="menu_category" href="/mypage">My Page</a>
+                    <a class="menu_category" href="/logout">Log Out</a>
+                    {% else %}
+                    <a class="menu_category" href="/login">Login</a>
+                    <a class="menu_category" href="/signup">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <article class="person_list">
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('BJ피오', 3)"><img src="../static/img/person/BJ피오.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('BJ피오', 3)">BJ피오 (차승훈)</a>
+                    <br>소속팀 : 없음 (전 프로 출신) </br>
+                    <br>pgc 우승자이며 한국프로 1위라는 타이틀도 가지고 있다. 게임 스트리밍을 통해 </br>
+                    가장 유명한 스트리머(프로게이머)이며, 많고 두꺼운 팬들을 보유하였고,
+                    <br>오더하면서 총까지 잘쏘는 플레이어, 플레이는 암살플레이가 많다.</br>               
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('BJ로키', 3)"><img src="../static/img/person/박정영.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('BJ로키', 3)"> BJ로키 (박정영) </a>
+                    <br>소속팀 : Danawa e-sports (현 프로게이머) </br>
+                    <br>박정영은 대한민국의 PUBG(배틀그라운드) 프로게이머로, </br>
+                    그의 뛰어난 사격 능력과 전략적인 플레이로 많은 사람들의 주목을 받았습니다.
+                    <br>특히 팀 경기에서의 리더십과 팀원들과의 원활한 협업으로 유명하며, </br>
+                    이를 바탕으로 국내외 대회에서 높은 성적을 거두고 있습니다.            
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Seoul', 2)"><img src="../static/img/person/Seoul.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Seoul', 2)">Seoul (조기열) </a>
+                    <br>소속팀 : Dplus KIA (현 프로게이머) </br>
+                    <br>서울은 PUBG 경기에서 꾸준한 성과를 거두며 많은 팬들의 사랑을 받고 있고 있으며, </br>
+                    한때 피오선수와 딜량 1위로 어깨를 나란히 하던 선수경기 중에는 전략적인 플레이와 뛰어난 사격 실력으로 유명합니다.
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('BJ 이노닉스', 2)"><img src="../static/img/person/나희주.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('BJ 이노닉스', 2)"> BJ 이노닉스 (나희주) </a>
+                    <br>소속팀 : Danawa e-sports (현 프로게이머) </br>
+                    <br>예전에 정말 많은 선수들이 존경하고 감도를 따라쓰던 유저중에 한명이고  </br>
+                    이선수의 황금기 20년도 21년도 이노닉스 선수는 정말 레전드 중에 레전스 선수였고
+                    <br>중요할 때 다대일로 세이브를 매번 하는 믿음직스러운 선수입니다.</br>
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Salute', 2)"><img src="../static/img/person/Salute.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Salute', 2)">Salute (우제현) </a>
+                    <br>소속팀 : KWANGDONG FREECS (현 프로게이머) </br>
+                    <br>Salute 선수는 예전에는 유망주소리를 듣고 지금은 역대급 ar 반동제어왕 소리를 듣는 사람중 한명이며,</br>
+                    대회에서 팀원들과 협력하여 최상의 성적을 달성하였고 우승도 하였다. 
+                    <br>요즘 굉장히 핫한 어린친구중에 한명이다.</br>
+                </p>
+            </div>
+            <!-- 추가적인 인물들은 이어서 나열하시면 됩니다 -->
+        </article>
+    </section>  
+    <script>
+        // 이미지를 클릭할 때 호출되는 함수
+        function handleImageClick(name, table_index) {
+            // 클릭된 경우, /update_data_select 엔드포인트에 table_index 값을 전송
+            fetch('/update_data_select', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ value: table_index }) // 여기에 적절한 table_index 값을 넣어주세요
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // 서버로부터의 응답 확인
+                // 이 부분에 원하는 추가 처리를 할 수 있습니다.
+            })
+            .catch(error => console.error('Error:', error));
+    
+            // 클릭된 이미지의 이름을 URL 파라미터로 추가하여 index.html로 이동
+            window.location.href = '/index?name=' + name + '&table_index=' + table_index;
+        }
+    </script>
+</body>
+</html>

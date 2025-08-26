@@ -1,0 +1,55 @@
+.top_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    height: 65px; /* 원하는 높이로 설정 */
+}
+
+.left_menu, .center_menu, .right_menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.left_menu {
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.center_menu {
+    flex: 1.5;
+    justify-content: center;
+}
+
+.right_menu {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.menu_category {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    transition: ease-in-out 0.1s;
+    display: flex;
+    align-items: center;
+    height: 100%; /* 부모 컨테이너의 높이에 맞춤 */
+    padding: 0 20px; /* 패딩에서 상하 패딩 제거 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box; /* 패딩을 포함한 전체 높이 유지 */
+}
+
+.menu_category:hover {
+    border-bottom: 1px solid white;
+    background-color: #232323;
+}
+
+.menu_category img {
+    height: 100%; /* 이미지가 부모 컨테이너의 높이에 맞게 */
+    object-fit: contain; /* 이미지 비율을 유지하며 맞춤 */
+    padding: 10px; /* 이미지에 패딩 추가 */
+    box-sizing: border-box; /* 패딩을 포함한 전체 높이 유지 */
+}

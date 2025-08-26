@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서든어택</title>
+    <link rel="stylesheet" href="../static/css/sub_page_1.css">
+    <link rel="stylesheet" href="../static/css/top_menu.css">
+    <style>
+        *
+        {
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        html,body
+        {
+            width: 100%;
+            height: 100%;
+            background-color: #2B2B2B;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="top_menu">
+                <div class="left_menu">
+                    <a class="menu_category" href="/"><img src="../static/img/banner/Sprite_Logo.png" alt="Logo"></a>
+                </div>
+                <div class="center_menu">
+                    <a class="menu_category" href="/LOL">리그오브레전드</a>
+                    <a class="menu_category" href="/PUBG">배틀그라운드</a>
+                    <a class="menu_category" href="/Overwatch">오버워치</a>
+                    <a class="menu_category" href="/valo">발로란트</a>
+                </div>
+                <div class="right_menu">
+                    {% if session.user_id %}
+                    <a class="menu_category" href="/mypage">My Page</a>
+                    <a class="menu_category" href="/logout">Log Out</a>
+                    {% else %}
+                    <a class="menu_category" href="/login">Login</a>
+                    <a class="menu_category" href="/signup">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <article class="person_list">
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('syukmanGod', 1)"><img src="../static/img/person/BJ syukmanGod.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('syukmanGod', 1)">BJ syukmanGod </a>
+                    <br>소속팀 : 없음 </br>
+                    <br>서든어택 게임에서 "syukmanGod"는 유명한 플레이어로 알려져 있으며, 특히 스나이퍼 능력으로 유명합니다 </br>
+                    또한, 서든어택 커뮤니티에서 그의 플레이 스타일과 전략은 많은 관심을 받고 있습니다.
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('BJ ReileyT^T', 1)"><img src="../static/img/person/BJ ReileyT^T.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('BJ ReileyT^T', 1)"> BJ ReileyT^T (레일리) </a>
+                    <br>소속팀 : 없음 </br>
+                    <br>고감도의 게이머로, 스나이퍼 위주 다양한 무기와 전략을 활용하여 경기에서 뛰어난 성과를 보이고 있습니다</br>
+                    특히, 그의 팀워크와 전략적인 플레이는 많은 이들에게 영감을 주고 있습니다.            
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('지훈둥', 2)"><img src="../static/img/person/BJ 지훈둥.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('지훈둥', 2)"> BJ 지훈둥 </a>
+                    <br>소속팀 : 없음 </br>
+                    <br>지훈둥은 서든어택 커뮤니티에서 유명한 플레이어로, </br>
+                    특히 라이플을 사용한 뛰어난 플레이로 알려져 있으며 경기에서 높은 순위를 자주 기록하였습니다.
+                    <br>또한 재밌는 입담과 엄청난 샷발로 시청자와 여자팬들이 많으며 최근 복귀하며 폼을 끌어 올리는중 입니다. </br>
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('멩밍이잉', 2)"><img src="../static/img/person/BJ 멩밍이잉.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('멩밍이잉', 2)"> BJ 멩밍이잉 </a>
+                    <br>소속팀 : 없음 </br>
+                    <br>서든어택 커뮤니티에서 유명한데, 그의 플레이 스타일과 전략은 많은 이들에게 인정받고 있습니다.
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('나실인', 1)"><img src="../static/img/person/BJ 나실인.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('나실인', 1)"> BJ 나실인 </a>
+                    <br>소속팀 : 없음 </br>
+                    <br>대룰판에서 유명한 멀티 유저이고 킥스나 방송에서 재밌게 출연한 내용이 있다.</br>
+                </p>
+            </div>
+            <!-- 추가적인 인물들은 이어서 나열하시면 됩니다 -->
+        </article>
+    </section>  
+    <script>
+        // 이미지를 클릭할 때 호출되는 함수
+        function handleImageClick(name, table_index) {
+            // 클릭된 경우, /update_data_select 엔드포인트에 table_index 값을 전송
+            fetch('/update_data_select', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ value: table_index }) // 여기에 적절한 table_index 값을 넣어주세요
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // 서버로부터의 응답 확인
+                // 이 부분에 원하는 추가 처리를 할 수 있습니다.
+            })
+            .catch(error => console.error('Error:', error));
+    
+            // 클릭된 이미지의 이름을 URL 파라미터로 추가하여 index.html로 이동
+            window.location.href = '/index?name=' + name + '&table_index=' + table_index;
+        }
+    </script>
+</body>
+</html>

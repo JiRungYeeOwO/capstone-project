@@ -1,0 +1,177 @@
+        * 
+        {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .main_div 
+        {
+            overflow-y: scroll;
+            overflow-x: hidden;
+            width: 100%;
+            height: 100vh;
+            scroll-snap-type: y mandatory;
+            border: 20%;
+        }
+        .content_div 
+        {
+            height: 100vh;
+            width: 100%;
+            scroll-snap-align: center;
+            position: relative;
+        }
+        #video_div 
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .banner_img
+        {
+            width:100%;
+            height: 100%;
+        }
+        .video_overlay 
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            opacity: 0.2;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .content_overlay
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+            color: white;
+        }
+        /*--- 메인 카테고리 ---*/
+        #main_category
+        {
+            width:100%;
+            height:100%;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            align-items: flex-start;
+        }
+        .category_wrap {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 100px;
+        }
+        
+        .game_category {
+            width: 30%;
+            margin: 1.5%;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .game_category img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+        
+        .game_category p {
+            position: absolute;
+            bottom: -100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            margin: 0;
+            padding: 10px 0;
+            transition: bottom 0.3s ease;
+            border-radius: 10px;
+        }
+        
+        .game_category:hover p {
+            bottom: 0;
+        }
+        /* 슬라이드 배너 (메인 하이라이트 콘텐츠 부분) */
+        .slide-container 
+        {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            height: 100%;
+        }
+        .slide 
+        {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            cursor: pointer;
+        }
+        .nav-button 
+        {
+            position: absolute;
+            top:45%;
+            width:30px;
+            height:20%;
+            transform: translateY(-45%);
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 5;
+        }
+        #next-slide
+        {
+            right:0;
+        }
+        /* 오버레이 부분 */
+        .top_exp
+        {
+            width: 100%;
+            height: 65%;
+        }
+        .title_head
+        {
+            font-family: "big_noodle";
+            color:white;
+            text-shadow: 3px 4px 4px black;
+            font-size:90px;
+            margin-top:50px;
+            margin-right : 50px;
+        }
+        .bottom_exp
+        {
+            width:100%;
+            height: 35%;
+        }
+        .tail
+        {
+            font-family: "hanna";
+            margin-left:40px;
+        }
+        .title_tail
+        {
+            font-size: 42px;
+            font-weight: bold;
+        }
+        .body_tail
+        {
+            font-size:18px;
+        }

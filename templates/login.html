@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends</title>
+    <link rel="stylesheet" href="../static/css/top_menu.css">
+    <link rel="stylesheet" href="../static/css/sign.css">
+    <style>
+        *
+        {
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        html,body
+        {
+            width: 100%;
+            height: 100%;
+            background-color: #2B2B2B;
+        }
+        .sign_div
+        {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="top_menu">
+                <div class="left_menu">
+                    <a class="menu_category" href="/"><img src="../static/img/banner/Sprite_Logo.png" alt="Logo"></a>
+                </div>
+                <div class="center_menu">
+                    <a class="menu_category" href="/LOL">리그오브레전드</a>
+                    <a class="menu_category" href="/PUBG">배틀그라운드</a>
+                    <a class="menu_category" href="/Overwatch">오버워치</a>
+                    <a class="menu_category" href="/valo">발로란트</a>
+                </div>
+                <div class="right_menu">
+                    {% if session.user_id %}
+                    <a class="menu_category" href="/logout">Log Out</a>
+                    {% else %}
+                    <a class="menu_category" href="/login">Login</a>
+                    <a class="menu_category" href="/signup">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+       <article>
+            <div class = "sign_div">
+                <h1>로그인</h1>
+                <form action="/login" method="post">
+                    <label for="id">아이디:</label>
+                    <input class = "input_area" type="text" id="id" name="id" required><br>
+            
+                    <label for="password">비밀번호:</label>
+                    <input class = "input_area" type="password" id="password" name="password" required><br>
+            
+                    <input class = "sub_btn" type="submit" value = "로그인"></input>
+                    <br>
+
+                    <input class = "sub_btn" type="button" value = "회원가입" onclick="location.href = '/signup'"></input>
+                    <br>
+                    <input class = "sub_btn" type="button" value = "ID / PW 찾기" onclick="location.href = '/findAccount'"></input>
+                </form>
+            </div>    
+       </article>
+    </section>  
+    {% if alert_message %}
+    <script>
+        alert("{{ alert_message }}");
+    </script>
+    {% endif %}
+</body>
+</html>

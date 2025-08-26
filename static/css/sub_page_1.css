@@ -1,0 +1,36 @@
+/* sub_page1.css */
+section
+{
+    width: 100%;
+}
+
+.person_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.list_box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    margin: 15px 0;
+    border: 3px solid #ccc;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.9);
+}
+.list_box img {
+    width:260px;
+    height:260px;
+    margin-right: 20px;
+}
+.person{
+    font-size: 18px;
+}
+.person_name
+{
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}

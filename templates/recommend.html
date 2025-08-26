@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 추천 시스템</title>
+    <link rel="stylesheet" href="../static/css/top_menu.css">
+    <link rel="stylesheet" href="../static/css/index_css.css">
+    <script src="../static/js/shop_link.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="top_menu">
+                <div class="left_menu">
+                    <a class="menu_category" href="/"><img src="../static/img/banner/Sprite_Logo.png" alt="Logo"></a>
+                </div>
+                <div class="center_menu">
+                    <a class="menu_category" href="/LOL">리그오브레전드</a>
+                    <a class="menu_category" href="/PUBG">배틀그라운드</a>
+                    <a class="menu_category" href="/Overwatch">오버워치</a>
+                    <a class="menu_category" href="/valo">발로란트</a>
+                </div>
+                <div class="right_menu">
+                    {% if session.user_id %}
+                    <a class="menu_category" href="/mypage">My Page</a>
+                    <a class="menu_category" href="/logout">Log Out</a>
+                    {% else %}
+                    <a class="menu_category" href="/login">Login</a>
+                    <a class="menu_category" href="/signup">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- 유명인 정보 표시 -->
+    {% if famous_person %}
+    <h2 class="famous_person_name">{{ famous_person }}의 장비 정보</h2>
+    {% if famous_person_data %}
+    <div class="famous_area">
+        <div class="f_area_div">
+            <img class="product_img" src="{{ url_for('static', filename='img/product/' + famous_person_data.headset + '.jpg') }}" alt="헤드셋 이미지">
+            <div class="f_area_tail">
+                <p class="shop_tag">
+                    <span class="product_name">{{ famous_person_data.headset }}</span><br>
+                    <a href="javascript:void(0);" onclick="goToProductLink('{{ famous_person_data.headset }}')" class="shop_tag">옥션</a>
+                    <a href="javascript:void(0);" onclick="goToProductLink_2('{{ famous_person_data.headset }}')" class="shop_tag">11번가</a>
+                    <a href="javascript:void(0);" onclick="goToProductLink_3('{{ famous_person_data.headset }}')" class="shop_tag">G마켓</a>
+                    <a href="javascript:void(0);" onclick="goToProductLink_4('{{ famous_person_data.headset }}')" class="shop_tag">쿠팡</a>
+                    <a href="javascript:void(0);" onclick="goToProductLink_5('{{ famous_person_data.headset }}')" class="shop_tag">티몬</a>
+                </p>
+            </div>
+        </div>
+        <!-- 이하 생략 -->
+    </div>
+    {% endif %}
+    {% endif %}
+
+    <!-- 카테고리 선택/추천 버튼, 추천된 장비들 영역 -->
+    <div class="select_area">
+        <!-- 카테고리 선택 폼 -->
+        <form action="/recommend?name={{ famous_person }}" method="post">
+            <label for="category">카테고리 선택:</label>
+            <select id="category" name="category">
+                {% for category in categories %}
+                <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+            <input class="submit_btn" type="submit" value="추천">
+        </form>
+    </div>
+        <!-- 제품 추천 결과 표시 -->
+        {% if product_title %}
+        <h2 class="famous_person_name">{{ product_title }}</h2>
+        <section>
+            <div class="product_div">
+            {% for item in recommended_products %}
+                <div class="product_head">
+                    <img alt="서버 이미지 오류" src="{{ url_for('static', filename='img/product/' + item['제품'] + '.jpg') }}" class="product_img">
+                    <div class="product_tail">
+                        <p class="shop_tag">
+                            <span class="product_name">{{ item['제품'] }}</span><br>
+                            <span class="description">{{ item['설명'] }}</span><br><br>
+                            <a href="javascript:void(0);" onclick="goToProductLink('{{ item['제품'] }}')" class="shop_tag">옥션</a>
+                            <a href="javascript:void(0);" onclick="goToProductLink_2('{{ item['제품'] }}')" class="shop_tag">11번가</a>
+                            <a href="javascript:void(0);" onclick="goToProductLink_3('{{ item['제품'] }}')" class="shop_tag">G마켓</a>
+                            <a href="javascript:void(0);" onclick="goToProductLink_4('{{ item['제품'] }}')" class="shop_tag">쿠팡</a>
+                            <a href="javascript:void(0);" onclick="goToProductLink_5('{{ item['제품'] }}')" class="shop_tag">티몬</a>
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+<!-- 댓글 섹션 -->
+<section>
+    <div class = "comment_area">
+        <h3>댓글</h3>
+        <form id="comment-form" action="/add_comment" method="post">
+            <input type="hidden" name="famous_person" value="{{ famous_person }}">
+            <textarea id="comment-input" name="comment" rows="4" cols="50"></textarea><br>
+            <input id="submit-btn" type="button" value="댓글 작성">
+        </form>
+        <div class="comments_section">
+            {% for comment in comments %}
+            <div class="comment">
+                <p><strong>{{ comment['nick_name'] }}</strong>: {{ comment['comment'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<script src = "../static/js/comment.js"></script>
+</body>
+</html>

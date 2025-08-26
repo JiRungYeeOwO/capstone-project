@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>발로란트</title>
+    <link rel="stylesheet" href="../static/css/sub_page_1.css">
+    <link rel="stylesheet" href="../static/css/top_menu.css">
+    <style>
+        *
+        {
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        html,body
+        {
+            width: 100%;
+            height: 100%;
+            background-color: #2B2B2B;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="top_menu">
+                <div class="left_menu">
+                    <a class="menu_category" href="/"><img src="../static/img/banner/Sprite_Logo.png" alt="Logo"></a>
+                </div>
+                <div class="center_menu">
+                    <a class="menu_category" href="/LOL">리그오브레전드</a>
+                    <a class="menu_category" href="/PUBG">배틀그라운드</a>
+                    <a class="menu_category" href="/Overwatch">오버워치</a>
+                    <a class="menu_category" href="/valo">발로란트</a>
+                </div>
+                <div class="right_menu">
+                    {% if session.user_id %}
+                    <a class="menu_category" href="/mypage">My Page</a>
+                    <a class="menu_category" href="/logout">Log Out</a>
+                    {% else %}
+                    <a class="menu_category" href="/login">Login</a>
+                    <a class="menu_category" href="/signup">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <article class="person_list">
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Stax', 2)"><img src="../static/img/person/Stax.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Stax', 2)">Stax (Kim Gu-taek)</a>
+                    <br>소속팀 : DRX (현 프로게이머) </br>
+                    <br>스택스(Kim Gu-taek)는 한국의 프로 발로란트 선수로, 게임 속에서 뛰어난 킬 센스와 </br>
+                    전략적인 플레이로 많은 이목을 끌고 있습니다. 그의 타이밍과 조준력은 상대를 압도할 정도로 정확하며,
+                    <br>팀 내에서도 리더십을 발휘하여 경기 결과에 큰 영향을 미칩니다.</br>               
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Rb', 3)"><img src="../static/img/person/Rb.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Rb', 3)">Rb (Goo Sang-min)</a>
+                    <br>소속팀 : DRX (현 프로게이머) </br>
+                    <br>Rb(Goo Sang-min)은 한국의 발로란트 프로게이머로, 다재다능한 플레이어로서 유명합니다. </br>
+                    그의 다양한 역할과 뛰어난 기술은 팀에 유연성을 제공하며, 결정적인 순간에 팀을 이끌어 갑니다.            
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Buzz', 3)"><img src="../static/img/person/Buzz.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Buzz', 3)">Buzz (Yu Byung-chul)</a>
+                    <br>소속팀 : DRX (현 프로게이머) </br>
+                    <br>Buzz(Yu Byung-chul)는 한국의 발로란트 프로게이머로, 지도력 있는 디펜더로 유명합니다.</br>
+                    그의 뛰어난 팀 커뮤니케이션과 전략은 경기 중에 팀원들을 효과적으로 이끌어내며, 
+                    <br>상황을 장악하는 능력으로 경기 결과에 중요한 영향을 미칩니다. </br>
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Lakia', 2)"><img src="../static/img/person/Lakia.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Lakia', 2)">Lakia (Kim Jong-min)</a>
+                    <br>소속팀 : Gen.G (현 프로게이머) </br>
+                    <br>Lakia(Kim Jong-min)는 한국의 발로란트 프로게이머로, 안정적이고 신뢰할 수 있는 플레이어입니다. </br>
+                    그의 냉정한 판단력과 훌륭한 타이밍은 팀에 안정성을 제공하며, 중요한 순간에 결정적인 플레이를 펼칩니다.
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Meteor', 3)"><img src="../static/img/person/Meteor.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Meteor', 3)">Meteor (Kim Tae-O)</a>
+                    <br>소속팀 : Gen.G (현 프로게이머) </br>
+                    <br>Meteor (Kim Tae-O)는 한국의 발로란트 프로게이머로, 강력한 킬러로서 유명합니다.</br>
+                    그의 뛰어난 조준력과 공격적인 플레이는 상대 팀에게 큰 위협을 줍니다.  
+                    <br>특히, 경기의 중요한 순간에 결정적인 킬을 확보하는 능력으로 유명합니다.</br>
+                </p>
+            </div>
+            <!-- 추가적인 인물들은 이어서 나열하시면 됩니다 -->
+        </article>
+    </section>  
+    <script>
+        // 이미지를 클릭할 때 호출되는 함수
+        function handleImageClick(name, table_index) {
+            // 클릭된 경우, /update_data_select 엔드포인트에 table_index 값을 전송
+            fetch('/update_data_select', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ value: table_index }) // 여기에 적절한 table_index 값을 넣어주세요
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // 서버로부터의 응답 확인
+                // 이 부분에 원하는 추가 처리를 할 수 있습니다.
+            })
+            .catch(error => console.error('Error:', error));
+    
+            // 클릭된 이미지의 이름을 URL 파라미터로 추가하여 index.html로 이동
+            window.location.href = '/index?name=' + name + '&table_index=' + table_index;
+        }
+    </script>
+</body>
+</html>

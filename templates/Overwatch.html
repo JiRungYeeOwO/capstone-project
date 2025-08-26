@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오버워치2</title>
+    <link rel="stylesheet" href="../static/css/sub_page_1.css">
+    <link rel="stylesheet" href="../static/css/top_menu.css">
+    <style>
+        *
+        {
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        html,body
+        {
+            width: 100%;
+            height: 100%;
+            background-color: #2B2B2B;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="top_menu">
+                <div class="left_menu">
+                    <a class="menu_category" href="/"><img src="../static/img/banner/Sprite_Logo.png" alt="Logo"></a>
+                </div>
+                <div class="center_menu">
+                    <a class="menu_category" href="/LOL">리그오브레전드</a>
+                    <a class="menu_category" href="/PUBG">배틀그라운드</a>
+                    <a class="menu_category" href="/Overwatch">오버워치</a>
+                    <a class="menu_category" href="/valo">발로란트</a>
+                </div>
+                <div class="right_menu">
+                    {% if session.user_id %}
+                    <a class="menu_category" href="/mypage">My Page</a>
+                    <a class="menu_category" href="/logout">Log Out</a>
+                    {% else %}
+                    <a class="menu_category" href="/login">Login</a>
+                    <a class="menu_category" href="/signup">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <article class="person_list">
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Profit', 3)"><img src="../static/img/person/Profit.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Profit', 3)"> Profit (박준영) </a>
+                    <br>소속팀 : London Spitfire (현 프로게이머) </br>
+                    <br>고감도선수이며, 겐트를 위시한 포커싱에 강점이 있는 선수이다. </br>
+                    트레이서로는 상당한 활동량으로 적 힐러진을 괴롭히는 모습을 보여주며,
+                    <br>유명한 겐지 플레이어이기도 하였고 영웅폭이 넓은 선수중에 한명이다.</br>
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Ryujehong', 2)"><img src="../static/img/person/Ryujehong.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Ryujehong', 2)"> Ryujehong (류제홍) </a>
+                    <br>소속팀 : 없음 (전 프로 출신) </br>
+                    <br>Ryujehong은 공격적이고 정확한 플레이로 유명한 한국의 오버워치 프로게이머입니다.</br>
+                    주로 Ana와 Zenyatta를 사용하며, 그의 플레이는 슬립 다트와 생존 능력을 활용한 뛰어난 전술적인 기술로 알려져 있습니다.
+                    <br>Overwatch League에서 활약한 경력이 있으며, 그의 업적은 게임 커뮤니티에서 여전히 기억됩니다.</br>         
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('JJoNak', 2)"><img src="../static/img/person/JJoNak.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('JJoNak', 2)"> JJoNak (방성현) </a>
+                    <br>소속팀 : 없음 </br>
+                    <br>시즌 3부터 랭킹 20위권 밖으로 나간 적이 없는 경쟁전 깡패. '쪼물락낙지' 으로 유명했으며, </br>
+                    아시아 경쟁전 순위 1위를 찍은 적이 있었고, 현재까지도 아시아 경쟁전 순위권 1페이지의 본인소유 계정이 3개나 되는 실력자다
+
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('Geguri', 1)"><img src="../static/img/person/Geguri.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('Geguri', 1)"> Geguri (김세연) </a>
+                    <br>소속팀 : 없음 (전 프로 출신) </br>
+                    <br>상당히 높은 감도를 쓰는 유저로 보통의 프로게이머들은 비교적 낮은 감도를 사용하는 것에 비해 </br>
+                    비해굉장히 높은 감도를 사용하는 유저로 유명하며, Geguri 유저는 에임이 매우 정확하다.
+                </p>
+            </div>
+            <div class="list_box">
+                <a href="#" onclick="handleImageClick('김효종', 3)"><img src="../static/img/person/김효종.jpg"></a>
+                <p class="person">
+                    <a class = "person_name" onclick="handleImageClick('김효종', 3)"> 김효종 (학살) </a>
+                    <br>소속팀 : 없음 (전 프로 출신) </br>
+                    <br>김효종은 오버워치의 프로게이머로서, 주로 탱커 역할을 맡아 활동합니다</br>
+                    의 플레이는 뛰어난 전략과 팀워크를 바탕으로 한 높은 수준의 게임 제어 능력으로 유명하며, 
+                    <br>그는 한국 내외의 다양한 프로 팀에서 활약하며, 그의 프로 경력은 꽤 오래되었습니다.</br>
+                </p>
+            </div>
+            <!-- 추가적인 인물들은 이어서 나열하시면 됩니다 -->
+        </article>
+    </section>  
+    <script>
+        // 이미지를 클릭할 때 호출되는 함수
+        function handleImageClick(name, table_index) {
+            // 클릭된 경우, /update_data_select 엔드포인트에 table_index 값을 전송
+            fetch('/update_data_select', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ value: table_index }) // 여기에 적절한 table_index 값을 넣어주세요
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // 서버로부터의 응답 확인
+                // 이 부분에 원하는 추가 처리를 할 수 있습니다.
+            })
+            .catch(error => console.error('Error:', error));
+    
+            // 클릭된 이미지의 이름을 URL 파라미터로 추가하여 index.html로 이동
+            window.location.href = '/index?name=' + name + '&table_index=' + table_index;
+        }
+    </script>
+</body>
+</html>
